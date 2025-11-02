@@ -1,2 +1,10 @@
-version: '3.9'
+version: '3.8'
 
+services:
+  rabbitmq:
+    image: rabbitmq:3
+    container_name: some-rabbit
+    hostname: my-rabbit
+    ports:
+      - "5672:5672"
+    restart: unless-stopped
