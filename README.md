@@ -38,7 +38,7 @@ docker compose -f docker/docker-compose.yml -f docker/docker-compose.mq.yml -f d
 Stop all running containers:
 
 ```bash
-docker compose down
+docker compose -f docker/docker-compose.yml -f docker/docker-compose.mq.yml -f docker/docker-compose.redis.yml  down
 ```
 
 Stop all containers **and remove named volumes** (to reset databases, queues, etc.):
@@ -85,3 +85,9 @@ docker system prune -a --volumes
 3. **Mention credentials** for RabbitMQ or Redis (if you set any in compose files).
 
 ---
+
+
+```
+docker run -d --hostname my-rabbit --name some-rabbit rabbitmq:3
+
+````

@@ -1,27 +1,23 @@
-version: "3.9"
-
 services:
   user:
-    build: ./user/Dockerfile
+    build:
+      context: ../user
     ports:
-      - "8001:8000"
-    environment:
-      - ./note/.env
-    networks:
-      - ecommerce-net
-
+      - "8003:8003"  
+    depends_on:
+      - note
+      - permission
+      - redis
+      - rabbitmq
 
   permission:
-    build: ./permission/Dockerfile
+    build:
+      context: ../permission
     ports:
-      - "8001:8000"
-    environment:
-      - ./note/.env
-
+      - "8002:8002"
 
   note:
-    build: ./note/Dockerfile
+    build:
+      context: ../note
     ports:
-      - "8001:8000"
-    environment:
-      - ./note/.env
+      - "8001:8001"
