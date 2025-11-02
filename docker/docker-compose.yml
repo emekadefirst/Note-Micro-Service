@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  user:
+    build: ./user/Dockerfile
+    ports:
+      - "8001:8000"
+    environment:
+      - ./note/.env
+    networks:
+      - ecommerce-net
+
+
+  permission:
+    build: ./permission/Dockerfile
+    ports:
+      - "8001:8000"
+    environment:
+      - ./note/.env
+
+
+  note:
+    build: ./note/Dockerfile
+    ports:
+      - "8001:8000"
+    environment:
+      - ./note/.env
