@@ -1,5 +1,5 @@
 from tortoise import fields, Model
-from auth.authServices.enums import Action, Module
+from src.core.enums import Action, Module
 from tortoise import timezone
 import uuid
 

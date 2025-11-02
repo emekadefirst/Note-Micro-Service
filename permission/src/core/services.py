@@ -1,9 +1,9 @@
-from auth.permission.repository import PermissionBaseRepository
-from auth.permission.schemas import (
+from src.utilities.repository import PermissionBaseRepository
+from src.core.schemas import (
     PermssionSchema, 
     PermissionGroupSchema
 )
-from auth.permission.models import Permission, PermissionGroup
+from src.core.models import Permission, PermissionGroup
 from fastapi import HTTPException
 
 
